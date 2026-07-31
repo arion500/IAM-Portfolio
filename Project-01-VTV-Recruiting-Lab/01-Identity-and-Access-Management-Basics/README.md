@@ -43,3 +43,35 @@ Microsoft Entra ID is Microsoft's cloud identity and access management service u
 What I Learned
 
 I learned the foundations of IAM and how identity security helps organizations protect resources.
+
+
+ Project Scenario
+
+VTV Recruiting is a growing organization that needs a secure way to manage employee identities and access to company resources.
+
+As an IAM Analyst, my responsibility is to help manage:
+
+- User accounts
+- Group memberships
+- Access permissions
+- Authentication methods
+- Security policies
+
+ Business Problem
+
+The organization needs to make sure:
+
+- Employees have the correct access
+- Users do not have unnecessary permissions
+- Sensitive information is protected
+- Access is removed when employees leave
+
+ IAM Solution Approach
+
+I will use Microsoft Entra ID concepts to design:
+
+- Users
+- Groups
+- Roles
+- Authentication policies
+- Access controls
