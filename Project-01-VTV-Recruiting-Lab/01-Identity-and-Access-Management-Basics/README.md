@@ -122,3 +122,63 @@ Evidence
 The screenshot below verifies that Kre Atkins was successfully added to the Recruiters group in Microsoft Entra ID.
 
 ![Recruiters Group Access Provisioning](Screenshot%202026-08-11%201.09.29%20PM.png)
+
+
+## Hands-On IAM Scenario
+
+### Ticket #003 - Department Transfer & Access Modification
+
+**User:** Randy Kumah  
+**Previous Department:** Finance  
+**New Department:** Recruiting  
+**Request:** Update the user's access after an approved transfer from Finance to Recruiting.  
+**Approval:** Manager approved
+
+### My Decision
+
+I determined that Randy's existing Finance access should be removed because it was no longer required for his new role. Keeping unnecessary Finance access could cause privilege creep and violate the principle of least privilege.
+
+I removed Randy from the Finance group and added him to the Recruiters group so his access matched his new job responsibilities.
+
+### Actions Taken
+
+1. Verified Randy's existing membership in the Finance group.
+2. Confirmed the department transfer was approved.
+3. Removed Randy from the Finance group.
+4. Verified Randy was no longer a Finance group member.
+5. Added Randy to the Recruiters group.
+6. Verified Randy appeared in the Recruiters group.
+7. Reviewed Microsoft Entra audit logs to confirm the group membership changes were completed successfully.
+
+### IAM Concepts Demonstrated
+
+- Identity lifecycle management
+- Access provisioning
+- Access deprovisioning
+- Group-based access management
+- Least privilege
+- Prevention of privilege creep
+- Authorization
+- Audit logging and verification
+
+### Evidence - Before Access Change
+
+Randy was originally a member of the Finance group.
+
+![Randy Finance Membership Before Transfer](Screenshot%202026-08-11%202.54.42%20PM.png)
+
+### Evidence - New Role Access
+
+After removing the outdated Finance access, Randy was added to the Recruiters group.
+
+![Randy Recruiters Membership After Transfer](Screenshot%202026-08-11%203.03.38%20PM.png)
+
+### Evidence - Audit Verification
+
+Microsoft Entra audit logs confirmed that the removal from the previous group completed successfully.
+
+![Successful Group Removal Audit Log](Screenshot%202026-08-11%204.11.51%20PM.png)
+
+### Result
+
+Randy's access was successfully updated to reflect his department transfer. His outdated Finance group membership was removed and his new Recruiting group membership was provisioned. The changes were verified through Microsoft Entra group membership and audit logs.
