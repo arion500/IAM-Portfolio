@@ -182,3 +182,59 @@ Microsoft Entra audit logs confirmed that the removal from the previous group co
 ### Result
 
 Randy's access was successfully updated to reflect his department transfer. His outdated Finance group membership was removed and his new Recruiting group membership was provisioned. The changes were verified through Microsoft Entra group membership and audit logs.
+
+
+## Ticket #004 - User Authentication Recovery
+
+### Scenario
+
+**User:** Evan Hooker
+
+**Issue:** The user was unable to authenticate to their account.
+
+### Investigation
+
+I reviewed the user's Microsoft Entra sign-in logs for the previous 30 days to investigate the authentication issue.
+
+No interactive or non-interactive sign-in activity was found.
+
+I then reviewed the user's authentication methods and discovered that no usable authentication methods were configured.
+
+### Resolution
+
+To provide the user with a secure way to establish authentication, I created a one-time Temporary Access Pass (TAP) with a one-hour expiration period.
+
+The Temporary Access Pass provides temporary authentication so the user can securely register a stronger authentication method without creating a permanent temporary credential.
+
+### Verification
+
+I verified that the Temporary Access Pass appeared under the user's usable authentication methods.
+
+I then reviewed the Microsoft Entra audit logs and confirmed that the authentication method was successfully registered.
+
+**Audit Log Result:**
+
+- Activity: Admin registered security info
+- Category: UserManagement
+- Status: Success
+- Status Reason: Admin registered temporary access pass method for user
+
+### Security Considerations
+
+The Temporary Access Pass was configured for one-time use with a one-hour expiration to reduce unnecessary exposure.
+
+The actual Temporary Access Pass was not included in the documentation because authentication credentials should never be stored in a public repository.
+
+### Result
+
+The user was provided with a temporary authentication method that allows them to securely begin registering stronger authentication credentials.
+
+### Skills Demonstrated
+
+- Microsoft Entra ID
+- Authentication troubleshooting
+- Sign-in log investigation
+- Authentication method management
+- Temporary Access Pass (TAP)
+- Audit log analysis
+- Credential security
